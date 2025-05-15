@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h4>Create Employee</h4>
+                    </div>
+                    <div class="card-body">
+                        <form method="post" action="addrecord/" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                      <label for="AREA_CD"> AREA CODE</label>
+                                      <input type="text" class="form-control" name="AREA_CD" id="AREA_CD" >
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="DOM_CONS">DOM_CONS</label>
+                                        <textarea class="form-control" name="DOM_CONS" rows="3" id="DOM_CONS" required></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="DOM_BULK_CONS">DOM_BULK_CONS</label>
+                                        <textarea class="form-control" name="DOM_BULK_CONS" rows="3" id="DOM_BULK_CONS" ></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="COM_CONS">COM_CONS</label>
+                                        <textarea class="form-control" name="COM_CONS" rows="3" id="COM_CONS" ></textarea>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="IND_CONS">IND_CONS</label>
+                                        <textarea class="form-control" name="IND_CONS" rows="3" id="IND_CONS" ></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="CNG_CONS">CNG_CONS</label>
+                                        <textarea class="form-control" name="CNG_CONS" rows="3" id="CNG_CONS" ></textarea>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="OTHERS_CONS">OTHERS_CONS</label>
+                                        <textarea class="form-control" name="OTHERS_CONS" rows="3" id="OTHERS_CONS" ></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="TOT_CONS">TOT_CONS</label>
+                                        <textarea class="form-control" name="TOT_CONS" rows="3" id="TOT_CONS" ></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="AREA_DESCR">AREA DESCRIPTION</label>
+                                        <textarea class="form-control" name="AREA_DESCR" rows="3" id="AREA_DESCR" ></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="SUBZONE_DESCR">SUBZONE DESCRIPTION</label>
+                                        <textarea class="form-control" name="SUBZONE_DESCR" rows="3" id="SUBZONE_DESCR" ></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="ZONE_DESCR">ZONE DESCRIPTION</label>
+                                        <textarea class="form-control" name="ZONE_DESCR" rows="3" id="ZONE_DESCR" ></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="REGION_DESCR">REGION DESCRIPTION</label>
+                                        <textarea class="form-control" name="REGION_DESCR" rows="3" id="REGION_DESCR" ></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="UNIT_DESCR">UNIT DESCRIPTION</label>
+                                        <textarea class="form-control" name="UNIT_DESCR" rows="3" id="UNIT_DESCR" ></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="GCV_STATION">GCV STATION</label>
+                                        <textarea class="form-control" name="GCV_STATION" rows="3" id="GCV_STATION" ></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="GCV_S_NAME">GCV_S_NAME</label>
+                                        <textarea class="form-control" name="GCV_S_NAME" rows="3" id="GCV_S_NAME" ></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="PHYSICAL_SMS">PHYSICAL SMS</label>
+                                        <textarea class="form-control" name="PHYSICAL_SMS" rows="3" id="PHYSICAL_SMS" ></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="PHYSICAL_SMS_DESCR">PHYSICAL SMS DESCRIPTION</label>
+                                        <textarea class="form-control" name="PHYSICAL_SMS_DESCR" rows="3" id="PHYSICAL_SMS_DESCR" ></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="TBS">TBS</label>
+                                        <textarea class="form-control" name="TBS" rows="3" id="TBS" ></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="TBS_DESCR">TBS DESCRIPTION</label>
+                                        <textarea class="form-control" name="TBS_DESCR" rows="3" id="TBS_DESCR" ></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="PRS">PRS</label>
+                                        <textarea class="form-control" name="PRS" rows="3" id="PRS" ></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="PRS_DESCR">PRS DESCRIPTION</label>
+                                        <textarea class="form-control" name="PRS_DESCR" rows="3" id="PRS_DESCR" ></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="SYSTEM_DATE">SYSTEM_DATE</label>
+                                        <input type="date" class="form-control" name="SYSTEM_DATE" rows="3" id="SYSTEM_DATE" >
+                                     <!--   <textarea type="date" class="form-control" name="SYSTEM_DATE" rows="3" id="SYSTEM_DATE" ></textarea> -->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12 text-center">
+                                    <button class="btn btn-success" type="submit">Submit</button>
+                                    <a class="btn btn-danger" href="{% url 'index' %}" type="button">Cancel</a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Postal Area</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body>
+<h1 class="m-5">Postal Area </h1>
+<table class="table table-striped table-stripped table-sm" border="2">
+    <thead>
+    <tr>
+        <th>AREA CODE</th>
+        <th> DOM CONS</th>
+        <th> DOM BULK CONS</th>
+        <th> COM CONS</th>
+        <th> IND CONS</th>
+        <th> CNG CONS</th>
+        <th> OTHERS CONS</th>
+        <th> TOTAL CONS</th>
+        <th>AREA DESCRIPTION</th>
+        <th>SUBZONE DESCRIPTION</th>
+        <th>ZONE DESCRIPTION</th>
+        <th>REGION DESCRIPTION</th>
+        <th>UNIT DESCRIPTION</th>
+        <th>GCV STATION</th>
+        <th>GCV S NAME</th>
+        <th>SMS CODE</th>
+        <th>SMS DESCRIPTION</th>
+        <th>TBS CODE</th>
+        <th>TBS DESCRIPTION</th>
+        <th>PRS</th>
+        <th>PRS DESCRIPTION</th>
+        <th>SYSTEM DATE</th>
+
+
+        <th> ACTIONS</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for a in postingapp %}
+    <tr>
+        <td>{{a.AREA_CD}}</td>
+        <td> {{a.DOM_CONS}}</td>
+        <td> {{a.DOM_BULK_CONS}}</td>
+        <td> {{a.COM_CONS}}</td>
+        <td> {{a.IND_CONS}}</td>
+        <td> {{a.CNG_CONS}}</td>
+        <td> {{a.OTHERS_CONS}}</td>
+        <td> {{a.TOT_CONS}}</td>
+        <td>{{a.AREA_DESCR}}</td>
+        <td>{{a.SUBZONE_DESCR}}</td>
+        <td>{{a.ZONE_DESCR}}</td>
+        <td>{{a.REGION_DESCR}}</td>
+        <td>{{a.UNIT_DESCR}}</td>
+        <td>{{a.GCV_STATION}}</td>
+        <td>{{a.GCV_S_NAME}}</td>
+        <td>{{a.PHYSICAL_SMS}}</td>
+        <td>{{a.PHYSICAL_SMS_DESCR}}</td>
+        <td>{{a.TBS}}</td>
+        <td>{{a.TBS_DESCR}}</td>
+        <td>{{a.PRS}}</td>
+        <td>{{a.PRS_DESCR}}</td>
+        <td>{{a.SYSTEM_DATE}}</td>
+        <td>
+            <a href="delete/{{ a.AREA_CD }}" onclick="return confirm('Are you sure you want to delete this?')" class="btn btn-danger btn-sm"> <i class="fa fa-trash"></i></a>
+            <!--   <a href="#" class="btn btn-warning btn-sm"> Edit  </a> -->
+            <a  href="update/{{ a.AREA_CD }}" class="btn btn-primary btn-sm"> <i class="fa fa-pencil"></i></a>
+        </td>
+
+
+    </tr>
+                                </thead>
+
+    {% endfor %}
+    </tbody>
+
+</table>
+ <div class="col-md-12 text-center">
+                                    <a class="btn btn-danger" href="{% url 'index' %}" type="button">Cancel</a>
+                                </div>
+</body>
+</html>

@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<!--
+<body>
+<form method="POST" class="post-form" action="/update/{{employee.AREA_CD}}">
+        {% csrf_token %}
+    <div class="container">
+<br>
+    <div class="form-group row">
+    <label class="col-sm-1 col-form-label"></label>
+    <div class="col-sm-4">
+    <h3>Update Details</h3>
+    </div>
+  </div>
+    <div class="form-group row">
+    <label class="col-sm-2 col-form-label">AREA CD</label>
+    <div class="col-sm-4">
+        <input type="text" name="AREA_CD" id="AREA_CD" required maxlength="20" value="{{ postingapp.AREA_CD }}"/>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-sm-2 col-form-label">DOM CONS</label>
+    <div class="col-sm-4">
+        <input type="text" name="DOM_CONS" id="DOM_CONS" required maxlength="100" value="{{ postingapp.DOM_CONS }}" />
+    </div>
+  </div>
+    <div class="form-group row">
+    <label class="col-sm-2 col-form-label">DOM_BULK_CONS</label>
+    <div class="col-sm-4">
+        <input type="TEXT" name="DOM_BULK_CONS" id="DOM_BULK_CONS" required maxlength="254" value="{{ postingapp.DOM_BULK_CONS }}" />
+    </div>
+  </div>
+    <div class="form-group row">
+    <label class="col-sm-2 col-form-label">COM_CONS</label>
+    <div class="col-sm-4">
+        <input type="text" name="COM_CONS" id="COM_CONS" required maxlength="15" value="{{ postingapp.COM_CONS }}" />
+    </div>
+  </div>
+        <div class="form-group row">
+    <label class="col-sm-2 col-form-label">IND_CONS</label>
+    <div class="col-sm-4">
+        <input type="text" name="IND_CONS" id="IND_CONS" required maxlength="15" value="{{ postingapp.IND_CONS }}" />
+    </div>
+  </div>
+        <div class="form-group row">
+    <label class="col-sm-2 col-form-label">CNG_CONS</label>
+    <div class="col-sm-4">
+        <input type="text" name="CNG_CONS" id="CNG_CONS" required maxlength="15" value="{{ postingapp.CNG_CONS }}" />
+    </div>
+  </div>
+        <div class="form-group row">
+    <label class="col-sm-2 col-form-label">OTHERS_CONS</label>
+    <div class="col-sm-4">
+        <input type="text" name="OTHERS_CONS" id="OTHERS_CONS" required maxlength="15" value="{{ postingapp.OTHERS_CONS }}" />
+    </div>
+  </div>
+        <div class="form-group row">
+    <label class="col-sm-2 col-form-label">TOT_CONS</label>
+    <div class="col-sm-4">
+        <input type="text" name="COM_CONS" id="TOT_CONS" required maxlength="15" value="{{ postingapp.TOT_CONS }}" />
+    </div>
+  </div>
+        <div class="form-group row">
+    <label class="col-sm-2 col-form-label">AREA_DESCR</label>
+    <div class="col-sm-4">
+        <input type="text" name="AREA_DESCR" id="AREA_DESCR" required maxlength="100" value="{{ postingapp.AREA_DESCR }}" />
+    </div>
+  </div>
+           <div class="form-group row">
+    <label class="col-sm-2 col-form-label">SUBZONE_DESCR</label>
+    <div class="col-sm-4">
+        <input type="text" name="SUBZONE_DESCR" id="SUBZONE_DESCR" required maxlength="100" value="{{ postingapp.SUBZONE_DESCR }}" />
+    </div>
+  </div>
+           <div class="form-group row">
+    <label class="col-sm-2 col-form-label">ZONE_DESCR</label>
+    <div class="col-sm-4">
+        <input type="text" name="ZONE_DESCR" id="ZONE_DESCR" required maxlength="100" value="{{ postingapp.ZONE_DESCR }}" />
+    </div>
+  </div>
+           <div class="form-group row">
+    <label class="col-sm-2 col-form-label">REGION_DESCR</label>
+    <div class="col-sm-4">
+        <input type="text" name="REGION_DESCR" id="REGION_DESCR" required maxlength="100" value="{{ postingapp.REGION_DESCR }}" />
+    </div>
+  </div>
+           <div class="form-group row">
+    <label class="col-sm-2 col-form-label">UNIT_DESCR</label>
+    <div class="col-sm-4">
+        <input type="text" name="UNIT_DESCR" id="UNIT_DESCR" required maxlength="100" value="{{ postingapp.UNIT_DESCR }}" />
+    </div>
+  </div>
+           <div class="form-group row">
+    <label class="col-sm-2 col-form-label">GCV_STATION</label>
+    <div class="col-sm-4">
+        <input type="text" name="GCV_STATION" id="GCV_STATION" required maxlength="100" value="{{ postingapp.GCV_STATION }}" />
+    </div>
+  </div>
+           <div class="form-group row">
+    <label class="col-sm-2 col-form-label">GCV_S_NAME</label>
+    <div class="col-sm-4">
+        <input type="text" name="GCV_S_NAME" id="GCV_S_NAME" required maxlength="100" value="{{ postingapp.GCV_S_NAME }}" />
+    </div>
+  </div>
+           <div class="form-group row">
+    <label class="col-sm-2 col-form-label">PHYSICAL_SMS</label>
+    <div class="col-sm-4">
+        <input type="text" name="PHYSICAL_SMS" id="PHYSICAL_SMS" required maxlength="100" value="{{ postingapp.PHYSICAL_SMS }}" />
+    </div>
+  </div>
+           <div class="form-group row">
+    <label class="col-sm-2 col-form-label">PHYSICAL_SMS_DESCR</label>
+    <div class="col-sm-4">
+        <input type="text" name="PHYSICAL_SMS_DESCR" id="PHYSICAL_SMS_DESCR" required maxlength="100" value="{{ postingapp.PHYSICAL_SMS_DESCR }}" />
+    </div>
+  </div>
+           <div class="form-group row">
+    <label class="col-sm-2 col-form-label">TBS</label>
+    <div class="col-sm-4">
+        <input type="text" name="TBS" id="TBS" required maxlength="100" value="{{ postingapp.TBS }}" />
+    </div>
+  </div>
+           <div class="form-group row">
+    <label class="col-sm-2 col-form-label">TBS_DESCR</label>
+    <div class="col-sm-4">
+        <input type="text" name="TBS_DESCR" id="TBS_DESCR" required maxlength="100" value="{{ postingapp.TBS_DESCR }}" />
+    </div>
+  </div>
+           <div class="form-group row">
+    <label class="col-sm-2 col-form-label">PRS</label>
+    <div class="col-sm-4">
+        <input type="text" name="PRS" id="PRS" required maxlength="100" value="{{ postingapp.PRS }}" />
+    </div>
+  </div>
+           <div class="form-group row">
+    <label class="col-sm-2 col-form-label">PRS_DESCR</label>
+    <div class="col-sm-4">
+        <input type="text" name="PRS_DESCR" id="PRS_DESCR" required maxlength="100" value="{{ postingapp.PRS_DESCR }}" />
+    </div>
+  </div>
+           <div class="form-group row">
+    <label class="col-sm-2 col-form-label">SYSTEM_DATE</label>
+    <div class="col-sm-4">
+        <input type="datetime-local" name="SYSTEM_DATE" id="SYSTEM_DATE" required maxlength="100" value="{{ postingapp.SYSTEM_DATE }}" />
+    </div>
+  </div>
+    <div class="form-group row">
+    <label class="col-sm-1 col-form-label"></label>
+    <div class="col-sm-4">
+    <button type="submit" class="btn btn-success">Update</button>
+    </div>
+  </div>
+    </div>
+</form>
+</body>
+
+-->
+
+<body>
+    <div class="container mt-5">
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h3>Update Employee</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                    <form action="updaterecord/{{ postingapp.AREA_CD }}" method="post">
+                            {% csrf_token %}
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                      <label for="AREA_CD"><B> AREA CODE </B></label>
+                                      <input type="text" class="form-control" name="AREA_CD" id="AREA_CD"  value="{{ postingapp.AREA_CD }}">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="DOM_CONS">DOM_CONS</label>
+                                        <input type="text"  class="form-control" name="DOM_CONS" id="DOM_CONS"  value="{{ postingapp.DOM_CONS }}" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="DOM_BULK_CONS">DOM_BULK_CONS</label>
+                                        <input type="text" class="form-control" name="DOM_BULK_CONS" rows="3" id="DOM_BULK_CONS" value="{{ postingapp.DOM_BULK_CONS }}">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="COM_CONS">COM_CONS</label>
+                                        <input type="text" class="form-control" name="COM_CONS" rows="3" id="COM_CONS" value="{{ postingapp.COM_CONS }}">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="IND_CONS">IND_CONS</label>
+                                        <input type="text" class="form-control" name="IND_CONS" rows="3" id="IND_CONS" value="{{ postingapp.IND_CONS }}">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="CNG_CONS">CNG_CONS</label>
+                                        <input type="text" class="form-control" name="CNG_CONS" rows="3" id="CNG_CONS" value="{{ postingapp.CNG_CONS }}">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="OTHERS_CONS">OTHERS_CONS</label>
+                                        <input type="text" class="form-control" name="OTHERS_CONS" rows="3" id="OTHERS_CONS" value="{{ postingapp.OTHERS_CONS }}">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="TOT_CONS">TOT_CONS</label>
+                                        <input type="text" class="form-control" name="TOT_CONS" rows="3" id="TOT_CONS" value="{{ postingapp.TOT_CONS }}">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="AREA_DESCR">AREA DESCRIPTION</label>
+                                        <input type="text" class="form-control" name="AREA_DESCR" rows="3" id="AREA_DESCR" value="{{ postingapp.AREA_DESCR }}">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="SUBZONE_DESCR">SUBZONE DESCRIPTION</label>
+                                        <input type="text" class="form-control" name="SUBZONE_DESCR" rows="3" id="SUBZONE_DESCR" value="{{ postingapp.SUBZONE_DESCR }}">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="ZONE_DESCR">ZONE DESCRIPTION</label>
+                                        <input type="text" class="form-control" name="ZONE_DESCR" rows="3" id="ZONE_DESCR" value="{{ postingapp.ZONE_DESCR }}">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="REGION_DESCR">REGION DESCRIPTION</label>
+                                        <input type="text" class="form-control" name="REGION_DESCR" rows="3" id="REGION_DESCR" value="{{ postingapp.REGION_DESCR }}">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="UNIT_DESCR">UNIT DESCRIPTION</label>
+                                        <input type="text" class="form-control" name="UNIT_DESCR" rows="3" id="UNIT_DESCR" value="{{ postingapp.UNIT_DESCR }}">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="GCV_STATION">GCV STATION</label>
+                                        <input type="text" class="form-control" name="GCV_STATION" rows="3" id="GCV_STATION" value="{{ postingapp.GCV_STATION }}">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="GCV_S_NAME">GCV_S_NAME</label>
+                                        <input type="text" class="form-control" name="GCV_S_NAME" rows="3" id="GCV_S_NAME" value="{{ postingapp.GCV_S_NAME }}">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="PHYSICAL_SMS">PHYSICAL SMS</label>
+                                        <input type="text" class="form-control" name="PHYSICAL_SMS" rows="3" id="PHYSICAL_SMS" value="{{ postingapp.PHYSICAL_SMS }}">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="PHYSICAL_SMS_DESCR">PHYSICAL SMS DESCRIPTION</label>
+                                        <input type="text" class="form-control" name="PHYSICAL_SMS_DESCR" rows="3" id="PHYSICAL_SMS_DESCR" value="{{ postingapp.PHYSICAL_SMS_DESCR }}">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="TBS">TBS</label>
+                                        <input type="text" class="form-control" name="TBS" rows="3" id="TBS" value="{{ postingapp.TBS }}">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="TBS_DESCR">TBS DESCRIPTION</label>
+                                        <input type="text" class="form-control" name="TBS_DESCR" rows="3" id="TBS_DESCR" value="{{ postingapp.TBS_DESCR }}">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="PRS">PRS</label>
+                                        <input type="text" class="form-control" name="PRS" rows="3" id="PRS" value="{{ postingapp.PRS }}">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="PRS_DESCR">PRS DESCRIPTION</label>
+                                        <input type="text" class="form-control" name="PRS_DESCR" rows="3" id="PRS_DESCR" value="{{ postingapp.PRS_DESCR }}">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="SYSTEM_DATE">SYSTEM_DATE</label>
+                                        <input type="date" class="form-control" name="SYSTEM_DATE" rows="3" id="SYSTEM_DATE" value="{{ postingapp.SYSTEM_DATE }}">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12 text-center">
+                                    <button class="btn btn-success" type="submit">Update</button>
+                                    <a class="btn btn-danger" href="{% url 'index' %}" type="button">Cancel</a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<!--
+
+-->

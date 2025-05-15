@@ -1,0 +1,183 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+    .row {
+        width: 220%;
+        margin:Auto;
+            }
+    bg-image {
+  background-image: url("ssgc.jpg");
+
+
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
+    height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;}
+
+</style>
+</head>
+
+<body >
+<div class="bg-image">
+<div  style= "margin-left:10px; padding:6px; background-color:orange;">
+<h3> Sui Southern Gas Company Limited (SSGC) </h3>
+</div>
+    <div class="container mt-5" style="margin-left:50px" >
+
+        <form class="d-flex p-2 mx-auto" action="search/" >
+    <h3 class="m-2">Search for  POSTAL CODE: </h3>
+            <input type="text" name="AREA_CD" placeholder="Enter Area_Cd" class="m-2" size="20"/>
+
+            <input type="text" name="PHYSICAL_SMS" placeholder="Enter SMS_Cd" class="m-2" size="20"/>
+
+             <input type="text" name="TBS" placeholder="Enter TBS_cd " class="m-2" size="20"/>
+
+    <button type="submit" class="btn btn-primary mb-2 mx-2">Search</button>
+</form>
+
+        <div class="row"  >
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="row">
+                            <h3>Postal Code List</h3>
+
+                            <div class="col-md-9">
+                                                                <a href="add/" class="btn btn-success btn-sm"> <i class="fa fa-plus"></i></a>
+
+                            </div>
+                            <div class="col-md-3 text-right">
+                            </div>
+                            <div class="col-md-9">
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="card-body">
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                            <th width="200px">AREA CODE</th>
+                            <th width="200px">DOM CONS</th>
+                            <th width="200px">DOM BULK COMS</th>
+                            <th width="200px">COM CONS</th>
+                            <th width="200px">IND CONS</th>
+                            <th width="200px">CNG CONS</th>
+                            <th width="200px">OTHER CONS</th>
+                            <th width="200px">TOTAL CONS</th>
+                            <th width="200px">AREA_DESCR</th>
+                            <th width="200px">SUBZONE DESCR</th>
+                            <th width="200px">ZONE DESCR</th>
+                            <th width="200px">REGION DESCR</th>
+                            <th width="200px">UNIT DESCR</th>
+                            <th width="200px">GCV STATION</th>
+                            <th width="500px">GCV S NAME</th>
+                            <th width="200px">PHYSICAL_SMS</th>
+                            <th width="200px">PHYSICAL_SMS_DESCR</th>
+                            <th width="200px">TBS</th>
+                            <th width="200px">TBS_DESCR</th>
+                            <th width="200px">PRS</th>
+                            <th width="200px">PRS DESCR</th>
+                            <th width="500px">SYSTEM DATE</th>
+
+                            <th width="200px"> ACTIONS </th>
+                            </thead>
+                              {%  for employee in postingapp %}
+                                <tr>
+                                        <td>{{ employee.AREA_CD }}</td>
+                                    <td>{{ employee.DOM_CONS }}</td>
+                                    <td>{{ employee.DOM_BULK_CONS }}</td>
+                                    <td>{{ employee.COM_CONS }}</td>
+                                    <td>{{ employee.IND_CONS }}</td>
+                                    <td>{{ employee.CNG_CONS }}</td>
+                                    <td>{{ employee.OTHERS_CONS }}</td>
+                                    <td>{{ employee.TOT_CONS }}</td>
+                                    <td>{{ employee.AREA_DESCR }}</td>
+                                    <td>{{ employee.SUBZONE_DESCR }}</td>
+                                    <td>{{ employee.ZONE_DESCR }}</td>
+                                    <td>{{ employee.REGION_DESCR }}</td>
+                                    <td>{{ employee.UNIT_DESCR }}</td>
+                                    <td>{{ employee.GCV_STATION }}</td>
+                                    <td>{{ employee.GCV_S_NAME }}</td>
+                                        <td>{{ employee.PHYSICAL_SMS }}</td>
+                                        <td>{{ employee.PHYSICAL_SMS_DESCR }}</td>
+                                        <td>{{ employee.TBS }}</td>
+                                        <td>{{ employee.TBS_DESCR }}</td>
+                                    <td>{{ employee.PRS }}</td>
+                                    <td>{{ employee.PRS_DESCR }}</td>
+                                    <td>{{ employee.SYSTEM_DATE }}</td>
+                                    <td>
+
+                                           <a href="delete/{{ employee.AREA_CD }}" onclick="return confirm('Are you sure you want to delete this?')" class="btn btn-danger btn-sm"> <i class="fa fa-trash"></i></a>
+                                        <!--   <a href="#" class="btn btn-warning btn-sm"> Edit  </a> -->
+                                            <a  href="update/{{ employee.AREA_CD }}" class="btn btn-primary btn-sm"> <i class="fa fa-pencil"></i></a>
+
+
+                                        </td>
+                                </tr>
+                                 {% endfor %}
+
+                            </thead>
+                        </table>
+                        <nav aria-label="Page navigation example">
+                          <ul class="pagination justify-content-end">
+                            {% if postingapp.has_previous %}
+                              <li class="page-item">
+                                <a class="page-link" href="?page={{ postingapp.previous_page_number }}">Previous</a>
+                              </li>
+                            {% else %}
+                              <li class="page-item disabled">
+                                <a class="page-link" href="#" tabindex="-1" aria-disabled="True">Previous</a>
+                              </li>
+                            {% endif %}
+                            {% for i in postingapp.paginator.page_range %}
+                              {% if postingapp.number == i %}
+                                <li class="page-item active" aria-current="page">
+                                  <span class="page-link">
+                                    {{ i }}
+                                    <span class="sr-only">(current)</span>
+                                  </span>
+                                </li>
+                              {% else %}
+                                <li class="page-item"><a class="page-link" href="?page={{ i }}">{{ i }}</a></li>
+                              {% endif %}
+                            {% endfor %}
+                            {% if postingapp.has_next %}
+                              <li class="page-item">
+                                <a class="page-link" href="?page={{ postingapp.next_page_number }}">Next</a>
+                              </li>
+                            {% else %}
+                              <li class="page-item disabled">
+                                <a class="page-link" href="#" tabindex="-1" aria-disabled="True">Next</a>
+                              </li>
+                            {% endif %}
+                          </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+</html>
+                                           <!-- <a href="show/{{ employee.id }}" class="btn btn-info btn-sm"> <i class="fa fa-eye"></i></a> -->
+
